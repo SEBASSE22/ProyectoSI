@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-def inicio(request):
-    return render(request,'blog/index.html')
+def login(request):
+    return render(request,'blog/login.html')
 
 def saludo(request):
     return render(request, 'blog/saludo.html')
