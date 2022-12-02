@@ -1,0 +1,36 @@
+{% extends 'body.html' %}
+{% block content %}
+<div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-search"></i>
+                    {{ title }}
+                </h3>
+              </div>
+
+                    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      {% for Empresas in empresas %}
+        <tr>
+          <th scope="row">{{ Empresas.id }}</th>
+          <td>{{ Empresas.nombre_empresa}}</td>
+        </tr>
+      {% endfor %}
+    
+  </tbody>
+</table>
+              <!-- /.card-header -->
+              <div class="card-body">
+              </div>
+              <!-- /.card-body -->
+        </div>
+{% endblock %}
