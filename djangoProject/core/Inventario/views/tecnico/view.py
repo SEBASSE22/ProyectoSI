@@ -6,4 +6,4 @@ def tecnicos(request):
         'title': 'Mantenimiento',
         
     }
-    return render(request, 'empleados/inicio_empleado.html', data)
+    return render(request, 'tecnicos/inicio_tecnico.html', data)
