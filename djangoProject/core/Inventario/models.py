@@ -96,7 +96,7 @@ class Dispositivos (models.Model):
         verbose_name = 'Dispositivo'
         verbose_name_plural = 'Dispositivos'
         db_table = 'dispositivos'
-        ordering = ['-id']
+        ordering = ['id']
 
 class Software (models.Model):
     numero_serie = models.ForeignKey(Dispositivos, on_delete=models.PROTECT)

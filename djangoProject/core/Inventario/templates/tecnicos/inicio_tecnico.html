@@ -1,9 +1,11 @@
 {% extends 'body.html' %}
 {% block content %}
+
 <div class="card card-default">
               <div class="card-header">
                 <h3 class="card-title">
-                  <i class="fas fa-search"></i>
+                 <!-- <button id="open" style="height: 30px;width: 243px; text-align: center;position: absolute;top: 17%;right: 17%;
+                  background-color: #f2f4f6;">Editar estado del dispositivo</button>-->
                     {{ title }}
                 </h3>
               </div>
@@ -13,16 +15,27 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
-      
+      <th scope="col">Tipo</th>
+      <th scope="col">Ubicacion</th>
+      <th scope="col">Empleado</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Diagnostico</th>
+      <th scope="col">Especificaciones</th>
     </tr>
   </thead>
 
   <tbody>
     
-      {% for Empresas in empresas %}
+      {% for Dispositivos in dispositivos %}
         <tr>
-          <th scope="row">{{ Empresas.id }}</th>
-          <td>{{ Empresas.nombre_empresa}}</td>
+          <th scope="row">{{ Dispositivos.id }}</th>
+          <td>{{ Dispositivos.nombre_dispositivo}}</td>
+          <td>{{ Dispositivos.tipo_dispositivo}}</td>
+          <td>{{ Dispositivos.ubicacion_dispositivos}}</td>
+          <td>{{ Dispositivos.empleado_asignado}}</td>
+          <td>{{ Dispositivos.estado_dispositivo}}</td>
+          <td>{{ Dispositivos.diagnostico}}</td>
+          <td>{{ Dispositivos.otras_especificaciones}}</td>
         </tr>
       {% endfor %}
     
@@ -33,4 +46,26 @@
               </div>
               <!-- /.card-body -->
         </div>
+
+  
+
+        <form id="frm" method="post" style="border:1px solid ;width:450px;margin:auto;opacity: 1;">
+          <fieldset id="form">
+          <legend style="text-align: center">Estado del dispositivo</legend>
+          <ol>
+              <li><label> # del dispositivo: </label><input type="text" name="fname" size="1" style="position: absolute;top: 66%;right: 42.5%;height: 25px;text-align: center;" /></li>
+              <li><label>Estado:  </label>
+                <select name="lenguajes" id="lang" style="position: absolute;right: 41.5%;">
+                <option value="En uso">En uso</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+                <option value="Sin servicio">Sin servicio</option>
+              </select></li>   
+          </ul>
+              <p align="center"><input type="submit" id="close"  value="Enviar" style="padding:3px;
+                color:#FFFFFF;
+                background-color:#990000;
+                border:1px solid #000000;" /></p>
+          </fieldset>
+          </form>
+  <script src="JS.js"></script>
 {% endblock %}
