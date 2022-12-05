@@ -6,7 +6,7 @@ from core.Inventario.views.tecnico.view import tecnicos
 
 
 urlpatterns = [
+    path('', login, name='login'),
     path('empleado/inicio', empleados, name='empleado_inicio'),
-    path('login', login, name='login'),
     path('tecnico/inicio', tecnicos, name='tecnico_inicio'),
 ]
